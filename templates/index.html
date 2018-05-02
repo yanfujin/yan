@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head %}
+	
+	<link rel="stylesheet"  href="{{url_for('static',filename='css/index.css')}}">
+
+{% endblock %}
+
+{% block content %}
+  <div>
+  	{% for uploads in name %}
+    <p><a href="{{url_for('detial',id=uploads.id)}}">{{uploads.title}}</a></p>
+		<p class="id">{{uploads.content}}</p>
+			<div class="nav1-group">
+				<span class="nav2-group">{{uploads.author.usename}}</span>
+				<span class="nav3-group">{{uploads.creat_time}}</span>			
+			</div>  
+	{% endfor %}		
+  </div>
+
+{% endblock %}
+
